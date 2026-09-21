@@ -1,181 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Foodstuffs & Pantry — Saya Superstores</title>
-  <meta name="theme-color" content="#061510">
-  <link rel="icon" type="image/jpeg" href="logo.jpeg">
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CBZWZQF92Q"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-CBZWZQF92Q');
-  </script>
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #061510;
-      --card: #0b2e1f;
-      --gold: #d4af37;
-      --gold-light: #e8cf7a;
-      --text: #eef5f0;
-      --muted: #a8c0b3;
-    }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: 'Jost', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    h1, h2, h3 { font-family: 'Playfair Display', serif; }
-    a { color: inherit; text-decoration: none; }
-
-    .topbar {
-      background: #04100c;
-      color: var(--gold-light);
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-align: center;
-      padding: 0.5rem;
-      text-transform: uppercase;
-    }
-    nav {
-      background: rgba(6,21,16,0.95);
-      border-bottom: 1px solid rgba(212,175,55,0.2);
-      padding: 0.9rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo { display: flex; align-items: center; gap: 0.6rem; font-weight: 700; }
-    .logo img { height: 40px; border-radius: 8px; border: 1.5px solid var(--gold); }
-    .back { color: var(--gold); font-size: 0.9rem; }
-
-    .page-header {
-      text-align: center;
-      padding: 3rem 1.5rem 2rem;
-    }
-    .page-header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
-    .page-header p { color: var(--muted); }
-
-    .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem 4rem; }
-
-    .product {
-      background: var(--card);
-      border: 1px solid rgba(212,175,55,0.22);
-      border-radius: 14px;
-      padding: 1.3rem 1.4rem;
-      margin-bottom: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .product-info h3 { font-size: 1.15rem; color: var(--gold-light); margin-bottom: 0.2rem; }
-    .product-info .size { font-size: 0.88rem; color: var(--muted); }
-    .product-info .made { font-size: 0.75rem; color: var(--gold); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.3rem; }
-    .product-right { text-align: right; }
-    .price {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.35rem;
-      color: var(--text);
-      margin-bottom: 0.5rem;
-    }
-    .order-btn {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--gold), #b8912a);
-      color: #061510;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0.55rem 1.1rem;
-      border-radius: 999px;
-    }
-
-    .note {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-top: 2rem;
-      padding: 1rem;
-      background: rgba(212,175,55,0.08);
-      border-radius: 12px;
-    }
-
-    @media (max-width: 600px) {
-      .product { flex-direction: column; align-items: flex-start; }
-      .product-right { text-align: left; width: 100%; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodstuffs & Pantry — Saya Superstores</title>
+    <meta name="theme-color" content="#061510">
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CBZWZQF92Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CBZWZQF92Q');
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #061510;
+            --card: #0b2e1f;
+            --gold: #d4af37;
+            --gold-light: #e8cf7a;
+            --text: #eef5f0;
+            --muted: #a8c0b3;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Jost', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding-bottom: 90px; /* Space for sticky cart footer */
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        a { color: inherit; text-decoration: none; }
+        .topbar {
+            background: #04100c;
+            color: var(--gold-light);
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+            text-align: center;
+            padding: 0.5rem;
+            text-transform: uppercase;
+        }
+        nav {
+            background: rgba(6,21,16,0.95);
+            border-bottom: 1px solid rgba(212,175,55,0.2);
+            padding: 0.9rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 700;
+        }
+        .logo img {
+            height: 40px;
+            border-radius: 8px;
+            border: 1.5px solid var(--gold);
+        }
+        .back { color: var(--gold); font-size: 0.9rem; }
+        .page-header {
+            text-align: center;
+            padding: 3rem 1.5rem 2rem;
+        }
+        .page-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .page-header p { color: var(--muted); }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+        .product {
+            background: var(--card);
+            border: 1px solid rgba(212,175,55,0.22);
+            border-radius: 14px;
+            padding: 1.3rem 1.4rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .product-info h3 {
+            font-size: 1.15rem;
+            color: var(--gold-light);
+            margin-bottom: 0.2rem;
+        }
+        .product-info .size {
+            font-size: 0.88rem;
+            color: var(--muted);
+        }
+        .product-info .made {
+            font-size: 0.75rem;
+            color: var(--gold);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-top: 0.3rem;
+        }
+        .product-right { text-align: right; }
+        .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+        .order-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), #b8912a);
+            color: #061510;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.55rem 1.1rem;
+            border-radius: 999px;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .order-btn:hover { opacity: 0.9; }
+        .note {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(212,175,55,0.08);
+            border-radius: 12px;
+        }
+        /* Sticky Cart Bar */
+        .cart-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #04100c;
+            border-top: 1px solid rgba(212,175,55,0.3);
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+        .cart-info {
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+        .cart-info span {
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+        .checkout-btn {
+            background: linear-gradient(135deg, var(--gold), #b8912a);
+            color: #061510;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            padding: 0.6rem 1.4rem;
+            border-radius: 999px;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.08em;
+        }
+        @media (max-width: 600px) {
+            .product { flex-direction: column; align-items: flex-start; }
+            .product-right { text-align: left; width: 100%; display: flex; justify-content: space-between; align-items: center; }
+        }
+    </style>
 </head>
 <body>
-  <div class="topbar">Same-Day Delivery · Order by 2pm</div>
 
-  <nav>
-    <a href="index.html" class="logo">
-      <img src="logo.jpeg" alt="Saya">
-      <span>Saya Superstores</span>
-    </a>
-    <a href="index.html" class="back">← Back to Categories</a>
-  </nav>
+    <div class="topbar">Same-Day Delivery · Order by 2pm</div>
+    
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="logo.jpeg" alt="Saya">
+            <span>Saya Superstores</span>
+        </a>
+        <a href="index.html" class="back">← Back to Categories</a>
+    </nav>
 
-  <div class="page-header">
-    <h1>Foodstuffs & Pantry</h1>
-    <p>Prices are indicative. Final price confirmed on WhatsApp.</p>
-  </div>
+    <div class="page-header">
+        <h1>Foodstuffs & Pantry</h1>
+        <p>Prices are indicative. Final price confirmed on WhatsApp.</p>
+    </div>
 
-  <div class="container" id="productList">
-    <!-- Products will be inserted here by JavaScript -->
-  </div>
+    <div class="container" id="productList">
+        <!-- Products will be inserted here by JavaScript -->
+    </div>
 
-  <script>
-    const products = [
-      { name: "Mama Gold Rice", size: "5 kg bag", price: 8000, made: "Made in Nigeria" },
-      { name: "Royal Stallion Rice", size: "5 kg bag", price: 8200, made: "Made in Nigeria" },
-      { name: "Big Bull Rice", size: "5 kg bag", price: 7900, made: "Made in Nigeria" },
-      { name: "Golden Penny Spaghetti", size: "500 g", price: 1200, made: "Made in Nigeria" },
-      { name: "Indomie Super Pack", size: "70 g × 40 carton", price: 15000, made: "Produced in Nigeria" },
-      { name: "Golden Penny Semovita", size: "1 kg", price: 1300, made: "Made in Nigeria" },
-      { name: "Dangote Sugar", size: "1 kg", price: 1500, made: "Made in Nigeria" },
-      { name: "White Beans (Oloyin)", size: "Paint bucket", price: 9500, made: "Made in Nigeria" },
-      { name: "Garri (White)", size: "Paint bucket", price: 1300, made: "Made in Nigeria" },
-      { name: "Vegetable Oil (Kings)", size: "1 litre", price: 2300, made: "Produced in Nigeria" }
-    ];
-
-    function formatPrice(n) {
-      return "₦" + n.toLocaleString("en-NG");
-    }
-
-    const container = document.getElementById("productList");
-    let html = "";
-
-    products.forEach(p => {
-      const message = encodeURIComponent(`Hello Saya! I want to order:\n${p.name} (${p.size})\nQuantity: 1`);
-      html += `
-        <div class="product">
-          <div class="product-info">
-            <h3>${p.name}</h3>
-            <div class="size">${p.size}</div>
-            <div class="made">${p.made}</div>
-          </div>
-          <div class="product-right">
-            <div class="price">${formatPrice(p.price)}</div>
-            <a class="order-btn" href="https://wa.me/2349016651148?text=${message}" target="_blank">Order on WhatsApp</a>
-          </div>
+    <!-- Sticky Cart Footer -->
+    <div class="cart-bar" id="cartBar" style="display: none;">
+        <div class="cart-info">
+            Cart: <span id="cartCount">0</span> items | Total: <span id="cartTotal">₦0</span>
         </div>
-      `;
-    });
+        <button class="checkout-btn" onclick="checkoutWhatsApp()">Checkout on WhatsApp</button>
+    </div>
 
-    html += `<div class="note">Don’t see what you need? Just send your full list on WhatsApp — we source almost everything.</div>`;
-    container.innerHTML = html;
-  </script>
+    <script>
+        const products = [
+            { name: "Mama Gold Rice", size: "5 kg bag", price: 8000, made: "Made in Nigeria" },
+            { name: "Royal Stallion Rice", size: "5 kg bag", price: 8200, made: "Made in Nigeria" },
+            { name: "Big Bull Rice", size: "5 kg bag", price: 7900, made: "Made in Nigeria" },
+            { name: "Golden Penny Spaghetti", size: "500 g", price: 1200, made: "Made in Nigeria" },
+            { name: "Indomie Super Pack", size: "70 g × 40 carton", price: 15000, made: "Produced in Nigeria" },
+            { name: "Golden Penny Semovita", size: "1 kg", price: 1300, made: "Made in Nigeria" },
+            { name: "Dangote Sugar", size: "1 kg", price: 1500, made: "Made in Nigeria" },
+            { name: "White Beans (Oloyin)", size: "Paint bucket", price: 9500, made: "Made in Nigeria" },
+            { name: "Garri (White)", size: "Paint bucket", price: 1300, made: "Made in Nigeria" },
+            { name: "Vegetable Oil (Kings)", size: "1 litre", price: 2300, made: "Produced in Nigeria" }
+        ];
+
+        let cart = [];
+
+        function formatPrice(n) {
+            return "₦" + n.toLocaleString("en-NG");
+        }
+
+        function renderProducts() {
+            const container = document.getElementById("productList");
+            let html = "";
+            products.forEach((p, index) => {
+                html += `
+                    <div class="product">
+                        <div class="product-info">
+                            <h3>${p.name}</h3>
+                            <div class="size">${p.size}</div>
+                            <div class="made">${p.made}</div>
+                        </div>
+                        <div class="product-right">
+                            <div class="price">${formatPrice(p.price)}</div>
+                            <button class="order-btn" onclick="addToCart(${index})">Add to Cart</button>
+                        </div>
+                    </div>
+                `;
+            });
+            html += `<div class="note">Don’t see what you need? Just send your full list on WhatsApp — we source almost everything.</div>`;
+            container.innerHTML = html;
+        }
+
+        function addToCart(index) {
+            const product = products[index];
+            const existing = cart.find(item => item.name === product.name);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartBar = document.getElementById("cartBar");
+            const cartCount = document.getElementById("cartCount");
+            const cartTotal = document.getElementById("cartTotal");
+
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+            if (totalItems > 0) {
+                cartBar.style.display = "flex";
+                cartCount.textContent = totalItems;
+                cartTotal.textContent = formatPrice(totalPrice);
+            } else {
+                cartBar.style.display = "none";
+            }
+        }
+
+        function checkoutWhatsApp() {
+            if (cart.length === 0) return;
+            let message = "Hello Saya! I want to order:\n\n";
+            cart.forEach(item => {
+                message += `- ${item.name} (${item.size}) x ${item.qty} (${formatPrice(item.price * item.qty)})\n`;
+            });
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            message += `\nTotal: ${formatPrice(totalPrice)}`;
+            
+            const encoded = encodeURIComponent(message);
+            window.open(`https://wa.me/2349016651148?text=${encoded}`, '_blank');
+        }
+
+        // Initialize page
+        renderProducts();
+    </script>
 </body>
 </html>
